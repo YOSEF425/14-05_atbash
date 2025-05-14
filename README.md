@@ -1,3 +1,3 @@
 # 14-05_atbash
-
-my name Abraham
+# the repo manager name is Yosef 
+# the name of the cipher master is Abraham
