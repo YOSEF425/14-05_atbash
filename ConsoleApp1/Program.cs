@@ -8,13 +8,43 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-        static void Main(string[] args)
+
+        static Tuple <string,int> rate_danger(string sentance)
         {
-            int x = 5;
-            Console.WriteLine(x + 2);
-            int y = 10;
-            Console.WriteLine(x + y);
+            int counter = 0;
+            List <string> words = sentance.Split(',').ToList();
+            List <string> dangerous_words = new List<string> {"bomb","nukhba","fighter","rocket","secret" +
+            "bombs","fighters","rockets","secrets"};
+            foreach (string word in words)
+            {
+                if (dangerous_words.Contains(word))
+                {
+                    counter++;
+                }
+            }
+            Tuple<string, int> result = new Tuple<string, int> { sentance, counter };
+            return result;
 
         }
+
+
+
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(rate_danger("we will bombm them all"));
+
+        }
+
+
+       
+
+
+
+
+
+
+
     }
 }
